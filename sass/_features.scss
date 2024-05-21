@@ -1,0 +1,50 @@
+.features{
+   
+    grid-column: center-start / center-end;
+    margin: 15rem 0; // centering all the section automatically jeje
+
+    display: grid; //making the grid item features to be a grid parent 
+
+    // grid-template-columns: repeat(3,1fr);
+    // grid-template-rows: auto auto; css grid will do this for us and keep it on the explicit grid 
+
+    //making responsive this grid
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr)); //It simply create as many tracks as can fit  based on the width that we define.
+
+    grid-gap: 6rem ;
+
+    align-items: start; // moving all sons elements to the top of this container
+
+
+     
+}
+
+.feature{
+
+    //making all 6 features a new grid system
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon{
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2; //we could have   grid-row: 1 / -1; only if we have have defined the row, osea if we had explicit rows, but as we didnt explicitly defined any row we cant use -1 
+        transform: translateY(-1rem);
+   
+    }
+
+    &__text{
+        font-size: 1.7rem;
+
+        &--light{
+            color: $color-grey-light-1;
+        }
+        &--dark{
+            color: $color-grey-dark-1;
+        }
+
+    }
+}
